@@ -1,0 +1,131 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+.samarth{
+    height: 100vh;
+    width: 100%;
+    background-image: url("../images/Assest/background.jpg");
+    background-position: center;
+    background-size: cover;
+    overflow-x: hidden;
+}
+
+.highway{
+    background-image: url('../images/Assest/Road.jpg');
+    height: 200px;
+    width: 300%;
+    position: absolute;
+    bottom: 0px;
+    overflow-x: hidden;
+    background-size: cover;
+    animation:  highway 1s linear infinite;
+}
+
+@keyframes highway {
+    100%{
+        transform: translateX(-1000px);
+    }
+}
+
+
+.city{
+    background-image: url('../images/Assest/city.png');
+    height: 250px;
+    width: 100%;
+    position: absolute;
+    background-position: center;
+    background-repeat: repeat-x;
+    bottom: 181px;
+    animation: city 10s linear infinite;
+}
+
+.car2{
+    width: 100%;
+    position: absolute;
+    top: 22px;
+    left: 2%;
+    animation: car2 7s linear infinite;
+}
+.car2 img{
+    width: 200px;
+}
+@keyframes car2 {
+    0%{
+        left: 0;
+        transform: translateX(0);
+        transform: translateY(3px);
+    }
+    25%{
+        top: 113px;
+        transform: translateX(206px);
+    }
+    75%{
+        transform: translateY(0px);
+        transform: translateX(390px);
+    }
+    100%{
+        transform: translateY(8px);
+        transform: translateX(100%);
+        top: 200px;
+    }
+    
+}
+ 
+@keyframes city {
+    100%{
+        transform: translateX(-100px)
+    }
+}
+
+.car{
+    width: 400px;
+    position: absolute;
+    bottom: 72px;
+    left: 32%;
+    animation: car 0.4s alternate infinite;
+}
+
+.car img{
+    width: 100%;
+}
+@keyframes car {
+    from{
+        transform: translateY(0px);
+    }
+    to{
+        transform: translateY(3px);
+    } 
+}
+
+
+.wheel{
+    position: absolute;
+    bottom: 99px;
+    left: 19%;
+    z-index: 4;
+}
+
+.wheel img{
+    width: 65px;
+    height: 65px;
+    animation: wheel 0.2s linear infinite;
+}
+
+.front-wheel{
+    position: absolute;
+    left: 474px;
+    bottom: 0px;
+}
+.back-wheel{
+    position: absolute;
+    left: 283px;
+    bottom: 0px;
+}
+
+@keyframes wheel {
+    100%{
+        transform: rotate(360deg);
+    }
+}

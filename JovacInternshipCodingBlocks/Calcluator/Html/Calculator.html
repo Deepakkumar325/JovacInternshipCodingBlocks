@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../CSS/style.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+
+
+</head>
+
+<body>
+    <div class="float:right; background:rgb(83, 230, 97);" id="Turn" onclick="changeColor(this)">Turn On</div>
+    <div class="container" id="">
+        <div class="calculator " id="on-off">
+            <input type="text" placeholder="0" id="outputScreen">
+
+            <button   class="cle">C</button>
+            <button   class="Del"><ion-icon name="backspace-outline"></ion-icon></button>
+            <button >%</button>
+            <button >/</button>
+            <button >7</button>
+            <button >8</button>
+            <button >9</button>
+            <button >*</button>
+            <button >4</button>
+            <button >5</button>
+            <button >6</button>
+            <button >-</button>
+            <button >1</button>
+            <button >2</button>
+            <button >3</button>
+            <button >+</button>
+            <button >.</button>
+            <button >0</button>
+            <button class="equal">=</button>
+        </div>
+        <hr>
+        <p>Made by @ Deepak kuamr</p>
+    </div>
+     
+    <script>
+        var buttons = document.querySelectorAll('button');
+var screen = document.getElementById("outputScreen")
+
+for(let button of buttons){
+button.addEventListener('click',function(e){
+
+    // console.log(e.target.innerText) 
+
+    const buttonText = e.target.innerText;
+    if(buttonText === 'C'){
+        screen.value="";
+    }
+    else if(buttonText =='x'){
+        screen.value+='*';
+    }
+    else if(buttonText =='/'){
+        screen.value+='/';
+    } 
+    else if(buttonText =='%'){
+        screen.value+='%';
+    }
+    else if(buttonText =='-'){
+        screen.value+='-';
+    }
+    else if(buttonText =='='){
+       try{
+          screen.value = eval(screen.value);
+       }
+       catch(invalid)
+       {
+        //    screen.value="Invalid Syntax ";
+           alert("Invalid")
+           screen.value="";
+           return;
+       }
+    }
+    else if (buttonText === "") {
+            screen.value = screen.value.slice(0, -1);
+        }
+        
+    else{
+        screen.value+=buttonText;
+    }   
+    
+});}
+//  
+         
+        </script>
+</body>
+</html>
